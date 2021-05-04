@@ -14,7 +14,7 @@ app.set('views', 'prove02/views');
 app.use(express.static(path.join(__dirname, 'public'))); //Allows the public directory to be accessed from the front end, so style sheet can be included
 app.use(bodyParser.urlencoded({ extended: false }));
 
-app.use('addBook', addBookRoute.routes);    
+app.use(addBookRoute.routes);    
 app.use(viewBooksRoute);
 
 app.listen(process.env.PORT || 5000);
