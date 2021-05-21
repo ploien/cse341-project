@@ -1,0 +1,12 @@
+.horizontalNav {
+    display:flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+ul {
+    list-style-type: none;
+}
+.navItem {
+    margin: 20px;
+}

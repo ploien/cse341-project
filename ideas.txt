@@ -1,0 +1,8 @@
+1. Restraunt website where:
+    - Typical restraunt website
+    - Main page with basic info: Hours, Phone number, address, restraunt description
+    - Menu where users can add options to cart.
+    - User information can be stored for future user
+    Database info:
+        - User info
+        - Past orders
