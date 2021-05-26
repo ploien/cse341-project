@@ -1,13 +1,12 @@
 const router = require('express').Router();
 
 router
-
-    .use('/viewBooks', require('./create'))
     .use('/addBook', require('./addBook'))
     .use('/viewBooks', require('./viewBooks'))
+    .use('/create', require('./create').proveRoutes)
 
-    .get('/', (req, res, next) => {
-        res.render('pages/prove02', {
+    .get('/addBook', (req, res, next) => {
+        res.render('pages/prove02/addBook', {
             pageTitle: 'Prove 02',
             path: '/proveActivities'
         })

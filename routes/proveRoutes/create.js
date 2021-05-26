@@ -6,12 +6,11 @@ const rootDir = require('../../util/path');
 const proveRoutes = express.Router();
 const bookSummaries = []; //Variable to store book titles and summaries
 
-proveRoutes.post('/viewBooks', (req, res, next) => {
+proveRoutes.post('/create', (req, res, next) => {
     bookSummaries.push({title: req.body.title, summary: req.body.summary});
     console.log(bookSummaries);
-    res.render('/pages/prove02/viewBooks', {
-        books: bookSummaries
-    });
+    res.redirect('/viewBooks');
 });
 
-module.exports = proveRoutes;
+exports.bookSummaries = bookSummaries;
+exports.proveRoutes = proveRoutes;
