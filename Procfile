@@ -1,2 +1,2 @@
 web: node index.js
-web: npm run prove02
+web: npm run start
