@@ -1,0 +1,17 @@
+<%- include('./includes/head.ejs') %>
+<body>
+    <%- include('./includes/navigation.ejs') %>
+    <form action="/project01/admin/addProduct" method="POST" name="addProduct">
+        <label for="productName">Name</label>
+        <input type="text" name='productName' id='productName' placeholder="Product Name">
+
+        <label for='itemDescription'>Item Description</label>
+        <textarea name='itemDescription' id='itemDescription' placeholder="Item Description"></textarea>
+
+        <label for='price'>Price: $</label>
+        <input type="number" step=".01" name="price" id="price">
+
+        <button type="submit">Submit Product    </button>
+    </form>
+</body>
+</html>

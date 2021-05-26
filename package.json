@@ -11,7 +11,8 @@
     "test": "node test.js",
     "prove01": "nodemon week01/prove01.js",
     "week2": "nodemon lecturePractice/week2Practice.js",
-    "prove02": "nodemon prove02/prove02.js"
+    "prove02": "nodemon prove02/prove02.js",
+    "project": "nodemon project/projectApp.js"
   },
   "dependencies": {
     "body-parser": "^1.19.0",
