@@ -1,17 +1,32 @@
 <%- include('./includes/head.ejs') %>
 <body>
     <%- include('./includes/navigation.ejs') %>
-    <form action="/project01/admin/addProduct" method="POST" name="addProduct">
-        <label for="productName">Name</label>
-        <input type="text" name='productName' id='productName' placeholder="Product Name">
+    <div class="addProductForm">
+        <form action="/project01/admin/addProduct" method="POST" name="addProduct">
+            <div class="addProduct">
+                <label for="productName">Name</label>
+                <input type="text" name='productName' id='productName' placeholder="Product Name">
+            </div>
 
-        <label for='itemDescription'>Item Description</label>
-        <textarea name='itemDescription' id='itemDescription' placeholder="Item Description"></textarea>
+            <div class='addProduct'>
+                <label for='itemDescription'>Item Description</label>
+                <textarea name='itemDescription' id='itemDescription' placeholder="Item Description" rows="6"></textarea>
+            </div>
 
-        <label for='price'>Price: $</label>
-        <input type="number" step=".01" name="price" id="price">
+            <div class='addProduct'>
+                <label for='price'>Price: $</label>
+                <input type="number" step=".01" name="price" id="price">
+            </div>
 
-        <button type="submit">Submit Product    </button>
-    </form>
+            <div class='addProduct'>
+                <label for='productImage'>Image URL</label>
+                <input type="text" name=productImage id='productImage'>
+            </div>
+            
+            <div class='addProduct'>
+                <button type="submit">Submit Product    </button>
+            </div>
+        </form>
+    </div>
 </body>
 </html>

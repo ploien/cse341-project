@@ -18,10 +18,10 @@
                     <div>
                         <p class="productPrice">$<%= product.price %></p>
                     </div>
-                    <div class="formActions">
-                        <a href="/project01/product/<%= product.id %>" class="button">Details</a>
-                        <form action="/project01/cart" method="POST">
-                            <button type="submit" class="button">Add To Cart</button>
+                    <div>
+                        <a href='project01/admin/edit' class="button">Edit</a>
+                        <form action='project01/admin/deleteProduct' method='POST'>
+                            <button class="button" type="submit">Delete</button>
                         </form>
                     </div>
                 </article>

@@ -14,7 +14,22 @@ exports.getProductList = (req, res, next) => {
             pageTitle: 'Product List'
          }); 
     })
-    console.log("This will be a list of products")
-    
 };
+
+exports.getProduct = (req, res, next) => {
+    const prodId = req.params.productId;
+    Product.findById(prodId, product => {
+        console.log(product);
+        res.render('pages/project01/product', {
+            pageTitle: 'Product Details',
+            product: product
+        })
+    })
+};
+
+exports.getCart = (req, res, next) => {
+    res.render('pages/project01/cart', {
+        pageTitle: 'Shopping Cart'
+    })
+}
 

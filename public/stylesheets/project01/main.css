@@ -1,18 +1,86 @@
+body {
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+
+.addProduct label,
+.addProduct input,
+.addProduct textarea {
+    display: block;
+    width: 100%;
+    margin-bottom: .5rem;
+}
+
+.addProductForm {
+    margin: auto;
+    width: 30%;
+}
+
 .horizontalNav {
-    display:flex;
+    display: flex;
     flex-direction: row;
-    justify-content: flex-start;
+    justify-content: space-evenly;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    height: 2rem;
+    border: 0 0 auto 0;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    background-color: rgb(0, 0, 77);
 }
 
 ul {
-    list-style-type: none;
+    list-style: none;
 }
 .navItem {
-    margin: 20px;
+    display: block;
+    text-decoration: none;
+    margin-left: 10px;
+    text-align: center;
+    color: white;
+    height: 100%;
+    padding: 0px 8px 0px 8px;
+    
 }
 
-.groceryItem {
-    background-color: lightskyblue;
-    border-radius: 5%;
-    border-style: outset;
+.button {
+    font: inherit;
+    border: 1px solid #00695c;
+    color: #00695c;
+    background: white;
+    border-radius: 3px;
+    cursor: pointer;
+    text-decoration: none;
+    margin: 4px 0 6px 0;
+    padding: 2px;
+  }
+  
+  .button:hover,
+  .button:active {
+    background-color: #00695c;
+    color: white;
+  }
+.formActions {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content:space-evenly;
+    
 }
+
+.navItem:hover {
+    background-color: rgb(198, 204, 218);
+    color: black;
+}
+
+@media (max-width: 800px) {
+    .flex-container, .horizontalNav {
+      flex-direction: column;
+    }
+    .addProductForm{
+        width: 100%;
+    }
+  }
