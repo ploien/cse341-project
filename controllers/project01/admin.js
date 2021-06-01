@@ -1,3 +1,4 @@
+const { findById } = require('../../models/project01/product');
 const Product = require('../../models/project01/product')
 
 exports.getAddProduct = (req, res, next) => {
@@ -23,8 +24,19 @@ exports.getAdminProductList = (req, res, next) => {
     })
 };
 
-exports.getEdit = (req, res, next) => {
-    res.render('./pages/project01/edit', {
-        pageTitle: "Edit"
-    });
+exports.getEditProduct = (req, res, next) => {
+    const prodId = req.params.productId;
+    Product.findById(prodId, product => {
+        res.render('pages/project01/editProduct', {
+            pageTitle: 'Edit Product',
+            product: product
+        })
+    })
 }
+exports.postEditProduct = (req, res, next) => {
+
+    findById
+    product.save();
+    console.log(req.body);
+    res.redirect('/project01/admin/addProduct');
+    };
