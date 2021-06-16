@@ -21,7 +21,8 @@
                     <div class="formActions">
                         <a href='./editProduct/<%= product.id %>' class="button">Edit</a>
                         <input type="hidden" name="productId" value="<%= product.id %>">
-                        <form action='project01/admin/deleteProduct' method='POST'>
+                        <form action='./deleteProduct' method='POST'>
+                            <input type="hidden" value="<%=product.id%>" name="productId" id="productId">
                             <button class="button" type="submit">Delete</button>
                         </form>
                     </div>

@@ -22,6 +22,8 @@
                 <label for='productImage'>Image URL</label>
                 <input type="text" name=productImage id='productImage' value="<%=product.imageURL%>">
             </div>
+
+            <input type="hidden" value="<%= product.id %>" name="id" id="id">
             
             
             <div class='addProduct'>
