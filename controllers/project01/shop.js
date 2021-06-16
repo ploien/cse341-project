@@ -1,5 +1,6 @@
-const Product = require('../../models/project01/product')
-const Cart = require('../../models/project01/cart')
+const Product = require('../../models/project01/product');
+const Cart = require('../../models/project01/cart');
+const User = require('../../models/project01/user');
 
 
 exports.getHome = (req, res, next) => {
@@ -15,7 +16,7 @@ exports.getProductList = (req, res, next) => {
             res.render('./pages/project01/productList', {
                 prods: products,
                 pageTitle: 'Product List'
-             }); 
+            });
         })
         .catch(err => console.log(err));
 };
@@ -33,22 +34,28 @@ exports.getProduct = (req, res, next) => {
 };
 
 exports.getCart = (req, res, next) => {
-    Cart.getCart(cart => {
-        Product.fetchAll(products => {
-            const cartProducts = [];
-            for(product of products) {
-                const cartProductData = cart.products.find(prod => prod.id === product.id);
-                if(cartProductData) {
-                    cartProducts.push({productData: product, qty: cartProductData.qty} )
-                }
-            }
-
-            res.render('pages/project01/cart', {
-                pageTitle: 'Shopping Cart',
-                products: cartProducts
-            });
+    req.user
+        .getCart()
+        .then(cart => {
+            console.log(cart);
         })
-    })
+        .catch(err => console.log(err));
+    // Cart.getCart(cart => {
+    //     Product.fetchAll(products => {
+    //         const cartProducts = [];
+    //         for (product of products) {
+    //             const cartProductData = cart.products.find(prod => prod.id === product.id);
+    //             if (cartProductData) {
+    //                 cartProducts.push({ productData: product, qty: cartProductData.qty })
+    //             }
+    //         }
+
+    //         res.render('pages/project01/cart', {
+    //             pageTitle: 'Shopping Cart',
+    //             products: cartProducts
+    //         });
+    //     })
+    // })
 
 }
 
@@ -62,7 +69,7 @@ exports.postCart = (req, res, next) => {
 
 exports.postDeleteCartItem = (req, res, next) => {
     const productId = req.body.prodId;
-    const productPrice =req.body.price;
+    const productPrice = req.body.price;
     Cart.deleteProduct(productId, productPrice);
     res.redirect('./cart');
 }
