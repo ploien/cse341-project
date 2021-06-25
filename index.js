@@ -21,7 +21,7 @@ const app = express();
 
 // Route setup. You can implement more in the future!
 
-
+//Require all paths from the route folder
 const routes = require('./routes');
 
 app.use(express.static(path.join(__dirname, 'public')))
