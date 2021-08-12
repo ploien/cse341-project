@@ -1,0 +1,28 @@
+<%- include('./includes/head.ejs') %>
+
+    <body>
+        <%- include('./includes/navigation.ejs') %>
+        <div class="addProductForm">
+            <% if (errorMessage) { %>
+                <div class='user-message user-message--error'><%= errorMessage %></div>
+            <% } %>
+            <form action="/project01/login" method="POST" name="login">
+                <input type="hidden" name="_csrf" value="<%=csrfToken%>">
+                    <div class="addProduct">
+                        <label for="email">Email Address</label>
+                        <input type="text" name='email' id='email' placeholder="Email">
+                    </div>
+
+                    <div class="addProduct">
+                        <label for="password">Password</label>
+                        <input type="password" name='password' id='password' placeholder="password">
+                    </div>
+
+                    <div class='addProduct'>
+                        <button type="submit">Login</button>
+                    </div>
+            </form>
+            <a href="./reset">Reset Password</a>
+        </div>
+    </body>
+</html>

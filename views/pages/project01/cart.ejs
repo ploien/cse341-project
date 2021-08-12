@@ -4,15 +4,17 @@
         <% if (products.length > 0) { %>
             <ul>
                 <% products.forEach(p => { %>
-                    <li><%= p.productName %> ( <%= p.cartItem.quantity %> )</li>
+                    <li><%= p.productId.productName %> ( <%= p.quantity %> )</li>
                     <form action="./deleteCartItem" method="POST" name='deleteCartItem' id='deleteCartItem'>
-                        <input type="hidden" name='prodId' id='prodId' value="<%=p.id%>">
-                        <input type="hidden" name='price' id='price' value="<%=p.price%>">
+                        <input type="hidden" name="_csrf" value="<%=csrfToken%>">
+                        <input type="hidden" name='prodId' id='prodId' value="<%=p.productId._id%>">
+                        <input type="hidden" name='price' id='price' value="<%=p.productId.price%>">
                         <button class='button' type="submit">Delete</button>
                     </form>
                 <% }) %>
             </ul>
             <form action="createOrder" method="POST">
+                <input type="hidden" name="_csrf" value="<%=csrfToken%>">
                 <button type="submit" class="button">Complete Order</button>
             </form>
         <% } else { %>

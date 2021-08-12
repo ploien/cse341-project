@@ -1,7 +1,9 @@
 <%- include('./includes/head.ejs') %>
 <body>
     <%- include('./includes/navigation.ejs') %>
-    <form action='productSearch' name='productSearch' id="productSearch"></form>
+    <form action='productSearch' name='productSearch' id="productSearch">
+        <input type="hidden" name="_csrf" value="<%=csrfToken%>">
+    </form>
         <h1>Welcome to the Grocery Store</h1>
 
         <label for="product">Search</label>

@@ -1,12 +1,9 @@
 const routes = require('express').Router();
 
-const proveActivities = require('./proveRoutes');
-const teamActivities = require('./teamRoutes');
 const project01 = require('./project01Routes');
 
 routes
-    .use('/teamActivities', teamActivities)
-    .use('/proveActivities', proveActivities)
+
     .use('/project01', project01)
     
     .get('/', (req, res, next) => {

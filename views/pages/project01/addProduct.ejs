@@ -3,6 +3,7 @@
     <%- include('./includes/navigation.ejs') %>
     <div class="addProductForm">
         <form action="/project01/admin/addProduct" method="POST" name="addProduct">
+            <input type="hidden" name="_csrf" value="<%=csrfToken%>">
             <div class="addProduct">
                 <label for="productName">Name</label>
                 <input type="text" name='productName' id='productName' placeholder="Product Name">

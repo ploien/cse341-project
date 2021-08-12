@@ -19,10 +19,11 @@
                         <p class="productPrice">$<%= product.price %></p>
                     </div>
                     <div class="formActions">
-                        <a href='./editProduct/<%= product.id %>' class="button">Edit</a>
-                        <input type="hidden" name="productId" value="<%= product.id %>">
+                        <a href='./editProduct/<%= product._id %>' class="button">Edit</a>
+                        <input type="hidden" name="productId" value="<%= product._id %>">
                         <form action='./deleteProduct' method='POST'>
-                            <input type="hidden" value="<%=product.id%>" name="productId" id="productId">
+                            <input type="hidden" name="_csrf" value="<%=csrfToken%>">
+                            <input type="hidden" value="<%=product._id%>" name="productId" id="productId">
                             <button class="button" type="submit">Delete</button>
                         </form>
                     </div>

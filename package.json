@@ -15,18 +15,29 @@
     "project": "nodemon project/projectApp.js"
   },
   "dependencies": {
+    "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.0",
+    "connect-flash": "^0.1.1",
+    "connect-mongodb-session": "^3.0.0",
+    "csurf": "^1.11.0",
     "ejs": "^2.7.4",
     "express": "^4.17.1",
-    "express-handlebars": "^3.0.2",
+    "express-handlebars": "^3.1.0",
+    "express-session": "^1.17.2",
+    "lodash": "^4.17.21",
+    "mongodb": "^3.6.10",
+    "mongoose": "^5.13.5",
     "mysql2": "^2.2.5",
-    "nodemon": "^2.0.7",
+    "nodemailer": "^6.6.3",
+    "nodemailer-sendgrid-transport": "^0.2.0",
+    "nodemon": "^2.0.12",
     "pug": "^3.0.2",
-    "sequelize": "^6.6.2"
+    "sequelize": "^6.6.5"
   },
   "devDependencies": {
+    "minimist": "^1.2.5",
     "request": "^2.81.0",
-    "tape": "^4.7.0"
+    "tape": "^4.14.0"
   },
   "repository": {
     "type": "git",

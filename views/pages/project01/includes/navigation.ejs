@@ -2,10 +2,28 @@
     <ul class='horizontalNav'>
         <li><a href="/project01" name=home class='navItem'>Home</a></li>
         <li><a href="/project01/productList" name=productList class='navItem'>List of Products</a></li>
-        <li><a href="/project01/cart" name='cart' class='navItem'>Shopping Cart</a></li>
-        <li><a href="/project01/admin/addProduct" name=addProduct class='navItem'>Add Products</a></li>
-        <li><a href="/project01/admin/adminProductList" name=adminProductList class='navItem'>Admin Product List</a></li>
+        <% if (isAuthenticated) { %>
+            <li><a href="/project01/cart" name='cart' class='navItem'>Shopping Cart</a></li>
+            <li><a href="/project01/orders" name='orders' class='navItem'>Orders</a></li>
+            <li><a href="/project01/admin/addProduct" name=addProduct class='navItem'>Add Products</a></li>
+            <li><a href="/project01/admin/adminProductList" name=adminProductList class='navItem'>Admin Product List</a>
+            </li>
+        <% } %>
 
-        
+        <% if (!isAuthenticated) { %>
+            <li><a href="/project01/login" name='login' class='navItem'>Login</a></li>
+            <li>
+                <a href="/project01/signup" class="navItem">Signup</a>
+            </li>
+        <% } %>
+
+        <% if (isAuthenticated) { %>
+        <li>
+            <form action='/project01/logout' method="POST">
+                <input type="hidden" name="_csrf" value="<%=csrfToken%>">
+                <button type='submit' class="navItem">Logout</button>
+            </form>
+        </li>
+        <% } %>
     </ul>
 </nav>
